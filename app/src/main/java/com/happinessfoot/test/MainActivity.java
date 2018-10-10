@@ -23,20 +23,63 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        boolean checkTableProducts = false;
+        ArrayList<Products> products = new ArrayList<>();
+        Log.d("MyTag","Тестируем штуку\n");
+        Products product = new Products();
         try {
             XmlPullParser parser = getResources().getXml(R.xml.test);
+            int eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
 
-            while (parser.getEventType() != XmlPullParser.END_DOCUMENT) {
-                final String TAG = "ЛогКот";
+                String name;
                 String tmp = "";
+                switch (eventType)
+                {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        name = parser.getName();
+                        if(name.equalsIgnoreCase("table") && parser.getAttributeValue(0).equalsIgnoreCase("products"))
+                        {
+                            product = new Products();
+                            checkTableProducts = true;
+                        }
+                        if(name.equalsIgnoreCase("column") && parser.getAttributeValue(0).equalsIgnoreCase("id"))
+                        {
+                            product.id = Integer.parseInt(parser.nextText());
+                        }
+                        break;
+                    case  XmlPullParser.TEXT:
+                        if(checkTableProducts)
+                        {
 
-                parser.next();
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        name=parser.getName();
+                        if(name.equalsIgnoreCase("table"))
+                        {
+                            if(checkTableProducts)
+                            {
+                                products.add(product);
+                                checkTableProducts=false;
+                            }
+                        }
+                        break;
+                }
+
+                eventType=parser.next();
             }
         } catch (Throwable t) {
             Toast.makeText(this,
                     "Ошибка при загрузке XML-документа: " + t.toString(),
                     Toast.LENGTH_LONG).show();
+        }
+        final String TAG = "ЛогКот";
+
+        for (Products p : products) {
+            Log.d("MyTag","ID: "+p.name);
         }
     }
 }
