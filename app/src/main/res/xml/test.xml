@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.7.7
+- https://www.phpmyadmin.net
+-
+- Хост: localhost
+- Время создания: Окт 09 2018 г., 16:22
+- Версия сервера: 10.1.31-MariaDB
+- Версия PHP: 7.0.26
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="id7419276_test" collation="utf8_unicode_ci" charset="utf8">
+            <pma:table name="products">
+                CREATE TABLE `products` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+                  `price` int(11) NOT NULL,
+                  `genre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="test">
+                CREATE TABLE `test` (
+                  `id` int(11) NOT NULL,
+                  `type` int(11) NOT NULL,
+                  `t1` int(11) NOT NULL,
+                  `t2` int(11) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - База данных: 'id7419276_test'
+    -->
+    <database name="id7419276_test">
+        <!-- Таблица products -->
+        <table name="products">
+            <column name="id">1</column>
+            <column name="name">qwer</column>
+            <column name="price">111</column>
+            <column name="genre">qwer</column>
+        </table>
+        <table name="products">
+            <column name="id">2</column>
+            <column name="name"></column>
+            <column name="price">0</column>
+            <column name="genre"></column>
+        </table>
+        <table name="products">
+            <column name="id">3</column>
+            <column name="name">qwer</column>
+            <column name="price">123</column>
+            <column name="genre">tttt</column>
+        </table>
+        <!-- Таблица test -->
+        <table name="test">
+            <column name="id">0</column>
+            <column name="type">1</column>
+            <column name="t1">1</column>
+            <column name="t2">1</column>
+        </table>
+    </database>
+</pma_xml_export>
