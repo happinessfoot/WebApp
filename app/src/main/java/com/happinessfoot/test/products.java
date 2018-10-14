@@ -5,8 +5,8 @@ package com.happinessfoot.test;
  */
 
 public class Products {
-    public int id;
+    public String id;
     public String name;
-    public int price;
+    public String price;
     public String genre;
 }
