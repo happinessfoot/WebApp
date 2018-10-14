@@ -6,44 +6,46 @@
 
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Product Name"
+        android:text="@string/ProductName"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
-        android:textSize="17dip"/>
+        android:textSize="17sp"/>
 
     <EditText android:id="@+id/inputName"
+        android:inputType="text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
-        android:singleLine="true"/>
+        android:maxLines="1"/>
 
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Price"
+        android:text="@string/Price"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
-        android:textSize="17dip"/>
+        android:textSize="17sp"/>
 
     <EditText android:id="@+id/inputPrice"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
-        android:singleLine="true"
+        android:maxLines="1"
         android:inputType="numberDecimal"/>
 
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Description"
+        android:text="@string/Description"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
-        android:textSize="17dip"/>
+        android:textSize="17sp"/>
 
     <EditText android:id="@+id/inputDesc"
+        android:inputType="text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
@@ -57,13 +59,13 @@
         <Button android:id="@+id/btnSave"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Save Changes"
+            android:text="@string/SaveChanges"
             android:layout_weight="1"/>
 
         <Button android:id="@+id/btnDelete"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Delete"
+            android:text="@string/Delete"
             android:layout_weight="1"/>
     </LinearLayout>
 

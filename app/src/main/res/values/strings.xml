@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">test</string>
+    <string name="ProductName">Product name</string>
+    <string name="Price">Price</string>
+    <string name="Description">Description</string>
+    <string name="SaveChanges">Save Changes</string>
+    <string name="Delete">Delete</string>
 </resources>
